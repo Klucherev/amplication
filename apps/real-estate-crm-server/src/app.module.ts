@@ -14,6 +14,7 @@ import {
 import { HttpInstrumentation } from "@opentelemetry/instrumentation-http";
 import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-grpc";
 import { BatchSpanProcessor } from "@opentelemetry/sdk-trace-node";
+import { RabbitMQModule } from "./rabbitmq/rabbitmq.module";
 import { ClientModule } from "./client/client.module";
 import { PropertyModule } from "./property/property.module";
 import { AgentModule } from "./agent/agent.module";
@@ -32,6 +33,7 @@ import { LoggerModule } from "./logger/logger.module";
 @Module({
   controllers: [],
   imports: [
+    RabbitMQModule,
     LoggerModule,
     ClientModule,
     PropertyModule,
